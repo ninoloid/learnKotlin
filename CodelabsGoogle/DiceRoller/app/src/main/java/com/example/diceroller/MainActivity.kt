@@ -21,6 +21,11 @@ class MainActivity : AppCompatActivity() {
     addButton.setOnClickListener {
       addNumber()
     }
+
+    val resetButton: Button = findViewById(R.id.reset_button)
+    resetButton.setOnClickListener {
+      resetNumber()
+    }
   }
 
   private fun rollDice() {
@@ -45,7 +50,7 @@ class MainActivity : AppCompatActivity() {
         //  The string in TextView views is an instance of class CharSequence.
         //  To test its value, you need to convert it to a string
         var parsedResult = resultText.text.toString().toInt()
-        if (parsedResult in 1..5) {
+        if (parsedResult in 0..5) {
           parsedResult++
           resultText.text = parsedResult.toString()
         }
@@ -70,6 +75,11 @@ class MainActivity : AppCompatActivity() {
 //        resultInt++
 //        resultText.text = resultInt.toString()
 //      }
-//    }
+//    }W
 //  }
+
+  private fun resetNumber() {
+    var resultText: TextView = findViewById(R.id.result_text)
+    resultText.text = "0"
+  }
 }
