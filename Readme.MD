@@ -8,7 +8,7 @@
 * To add features, components, and permissions to your Android app, edit the AndroidManifest.xml file. All app components, such as additional activities, must be declared in this XML file.
 * To create an Android virtual device (an emulator) to run your app, use the AVD Manager.
 * To run your app on a physical Android device using Android Studio, enable USB debugging on the device. To do this, open **Settings > About phone** and tap **Build number** seven times. Then open **Settings > Developer options** and select **USB debugging**.
-
+---
 
 ## Android Kotlin Fundamentals 01.2: Basic app anatomy
 ### Activities
@@ -16,18 +16,18 @@
 * All activities have an associated layout file, which is an XML file in the app's resources. The layout file is named for the activity, for example activity_main.xml.
 * The setContentView() method in MainActivity associates the layout with the activity, and inflates that layout when the activity is created.
 * Layout inflation is a process where the views defined in the XML layout files are turned into (or "inflated" into) Kotlin view objects in memory. Once layout inflation happens, the Activity can draw these objects to the screen and dynamically modify them.
-  
+
 ### Views
 * All UI elements in the app layout are subclasses of the View class and are called views. TextView and Button are examples of views.
 * View elements can be grouped inside a ViewGroup. A view group acts as a container for the views, or other view groups, within it. LinearLayout is an example of a view group that arranges its views linearly.
-  
+
 ### View attributes
 * The android:layout_width and android:layout_height attributes indicate the weight and height of a view. The match_parent value stretches the view to its parent's width or height. The wrap_content value shrinks the view to fit the view's contents.
 * The android:text attribute indicates the text that a view should display (if that view displays text.) For buttons, android:text is the button label.
 * The android:orientation attribute in a LinearLayout view group arranges the view elements it contains. A value of horizontal arranges views left to right. A value of vertical arranges the views top to bottom.
 * The android:layout_gravity attribute determines the placement of a view and all that view's children.
 * The android:textSize attribute defines the size of the text in a text view. Text sizes are specified in sp units (scalable pixels). By using sp units, you can size text independently of the device's display quality.
-  
+
 ### Strings
 * Instead of hardcoding strings in the layout, it's a best practice to use string resources.
 * String resources are contained in the values/res/string.xml file.
@@ -49,3 +49,40 @@ To create a toast, call the makeText() factory method on the Toast class with th
 * A duration, for example Toast.LENGTH_SHORT
 
 To display the toast, call show().
+---
+
+## Android Kotlin Fundamentals 01.3: Image resources and compatibility
+### App resources:
+* Your app's resources can include images and icons, standard colors used in the app, strings, and XML layouts. All of those resources are stored in the res folder.
+* The drawable resources folder is where you should put all the image resources for your app.
+
+### Using vector drawables in image views:
+* Vector drawables are images described in XML format. Vector drawables are more flexible than bitmap images (such as PNG files) because they can be scaled to any size or resolution.
+* To add a drawable to your app's layout, use an <ImageView> element. The source of the image is in the android:src attribute. To refer to the drawable resource folder, use @drawable, for example "@drawable/image_name".
+* Use the ImageView view in your MainActivity code for the image. You can use setImageResource() to change the view's image to a different resource. Use R.drawable to refer to specific drawables, for example setImageResource(R.drawable.image_name).
+
+### The lateinit keyword:
+* Minimize the calls to findViewById() in your code by declaring fields to hold those views, and initializing the fields in onCreate(). Use the lateinit keyword for the field to avoid needing to declare it nullable.
+
+### The tools namespace for design-time attributes:
+* Use the tools:src attribute in the <ImageView> element in your layout to display an image in only Android Studio's preview or design editor. You can then use an empty image for android:src for the final app.
+* Use the tools namespace in the Android layout file to create placeholder content or hints for layout in Android Studio. Data declared by tools attributes is not used in the final app.
+
+### API levels:
+* Each Android OS has an official version number and name (for example Android 9.0, "Pie") and an API level (API 28). Use the API levels in your app's Gradle files to indicate the versions of Android your app supports.
+* The compileSdkVersion parameter in the build.gradle file specifies the Android API level that Gradle should use to compile your app.
+* The targetSdkVersion parameter specifies the most recent API level that you have tested your app against. In many cases this parameter has the same value as compileSdkVersion.
+* The minSdkVersion parameter specifies the oldest API level your app can run on.
+
+### Android Jetpack:
+* Android Jetpack is a collection of libraries, developed by Google, that offers backward-compatible classes and helpful functions for supporting older versions of Android. Jetpack replaces and expands on the set of libraries formerly known as the Android Support Library.
+* Classes imported from the androidx package refer to the Jetpack libraries. Dependencies to Jetpack in your build.gradle file also start with androidx.
+
+### Backward compatibility for vector drawables:
+* Vector drawables are only natively supported in versions of Android higher than API 21. In older versions, Gradle generates PNG images for those drawables when your app is built.
+* You can specify that the Android Support Library should be used for vector drawables in older API versions with the vectorDrawables.useSupportLibrary = true configuration parameter in the build.gradle file.
+* Once you've enabled the support library for vector drawables, use the app:srcCompat attribute in the <ImageView> element (instead of android:src) to specify the vector drawable source for that image.
+
+### The app namespace:
+* The app namespace in your XML layout file is for attributes that come from either your custom code or from libraries, not from the core Android framework.
+---
