@@ -92,16 +92,15 @@ To display the toast, call show().
 
 ---
 
-## Android Kotlin Fundamentals 01.4: Learn to hel[p yourself
+## Android Kotlin Fundamentals 01.4: Learn to help yourself
 * Official Android developer documentation is at developer.android.com.
 * Material Design is a conceptual design philosophy that outlines how apps should look and function on mobile devices. Material Design isn't just for Android apps. The Material Design guidelines are at material.io.
 * Android Studio provides templates for common and recommended app and activity designs. These templates offer working code for common use cases.
 * When you create a project, you can choose a template for your first activity.
 * While you are developing your app, you can create activities and other app components from built-in templates.
 * Google Samples contains code samples that you can study, copy, and incorporate into your projects.
+---
 
----
----
 ## MODULE 2
 ---
 ## Android Kotlin Fundamentals 02.1: Linear layout using the Layout Editor
@@ -111,3 +110,20 @@ To display the toast, call show().
 * The Layout Editor is a visual design editor inside Android Studio. You can use the Layout Editor to build your app's layout by dragging UI elements into the layout.
 * A style is a collection of attributes that specify the appearance for a view. For example, a style can specify font color, font size, background color, padding, and margin.
 * You can extract and collect all the formatting of a view into a style. To give your app a consistent look, reuse the style for other views.
+
+---
+
+## Android Kotlin Fundamentals 02.2: Add user interactivity
+* The Layout Editor tool in Android Studio is a visual design editor. You can use the Layout Editor to build your app's layout by dragging UI elements into your layout.
+* EditText is a UI element that lets the user enter and modify text.
+* A Button is a UI element that the user can tap to perform an action. A button can consist of text, an icon, or both text and an icon.
+
+### Click listeners
+* You can make any View respond to being tapped by adding a click listener to it.
+* The function that defines the click listener receives the View that is clicked.
+
+### You can attach a click-listener function to a View in either of two ways:
+* In the XML layout, add the android:onClick attribute to the <View> element.
+* Programmatically, use the setOnClickListener(View.OnClickListener) function in the corresponding Activity.
+
+---

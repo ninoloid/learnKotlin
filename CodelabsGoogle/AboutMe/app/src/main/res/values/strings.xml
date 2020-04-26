@@ -16,4 +16,6 @@
     dolore magnam aliquam quaerat voluptatem.
   </string>
   <string name="scrollable_img">Scrollable image</string>
+  <string name="editText_placeholder">Input your nickname</string>
+  <string name="done_button_label">Done</string>
 </resources>
