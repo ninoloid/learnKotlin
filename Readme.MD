@@ -1,5 +1,7 @@
 # SUMMARY
 
+## MODULE 1
+---
 ## Android Kotlin Fundamentals 01.1: Get started
 * To install Android Studio, go to Android Studio and follow the instructions to download and install it.
 * To see an app's Android hierarchy in the Project pane, click the Project tab in the vertical tab column. Then select Android in the drop-down menu at the top.
@@ -8,6 +10,7 @@
 * To add features, components, and permissions to your Android app, edit the AndroidManifest.xml file. All app components, such as additional activities, must be declared in this XML file.
 * To create an Android virtual device (an emulator) to run your app, use the AVD Manager.
 * To run your app on a physical Android device using Android Studio, enable USB debugging on the device. To do this, open **Settings > About phone** and tap **Build number** seven times. Then open **Settings > Developer options** and select **USB debugging**.
+  
 ---
 
 ## Android Kotlin Fundamentals 01.2: Basic app anatomy
@@ -49,6 +52,7 @@ To create a toast, call the makeText() factory method on the Toast class with th
 * A duration, for example Toast.LENGTH_SHORT
 
 To display the toast, call show().
+
 ---
 
 ## Android Kotlin Fundamentals 01.3: Image resources and compatibility
@@ -85,4 +89,25 @@ To display the toast, call show().
 
 ### The app namespace:
 * The app namespace in your XML layout file is for attributes that come from either your custom code or from libraries, not from the core Android framework.
+
 ---
+
+## Android Kotlin Fundamentals 01.4: Learn to hel[p yourself
+* Official Android developer documentation is at developer.android.com.
+* Material Design is a conceptual design philosophy that outlines how apps should look and function on mobile devices. Material Design isn't just for Android apps. The Material Design guidelines are at material.io.
+* Android Studio provides templates for common and recommended app and activity designs. These templates offer working code for common use cases.
+* When you create a project, you can choose a template for your first activity.
+* While you are developing your app, you can create activities and other app components from built-in templates.
+* Google Samples contains code samples that you can study, copy, and incorporate into your projects.
+
+---
+---
+## MODULE 2
+---
+## Android Kotlin Fundamentals 02.1: Linear layout using the Layout Editor
+* A ViewGroup is a view that can contain other views. LinearLayout and ScrollView are view groups.
+* LinearLayout is a view group that arranges its child views horizontally or vertically.
+* Use a ScrollView when you need to display content on the screen, such as long text or a collection of images. A scroll view can contain only one child view. If you want to scroll more than one view, then add a ViewGroup such as a LinearLayout to the ScrollView, and put the views to be scrolled inside that ViewGroup.
+* The Layout Editor is a visual design editor inside Android Studio. You can use the Layout Editor to build your app's layout by dragging UI elements into the layout.
+* A style is a collection of attributes that specify the appearance for a view. For example, a style can specify font color, font size, background color, padding, and margin.
+* You can extract and collect all the formatting of a view into a style. To give your app a consistent look, reuse the style for other views.
